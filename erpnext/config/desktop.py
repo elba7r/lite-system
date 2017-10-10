@@ -59,14 +59,6 @@ def get_data():
 			"type": "link",
 			"link": "List/Lead"
 		},
-		{
-			"module_name": "Profit and Loss Statement",
-			"_doctype": "Account",
-			"color": "#3498db",
-			"icon": "octicon octicon-repo",
-			"type": "link",
-			"link": "query-report/Profit and Loss Statement"
-		},
 
 		# old
 		{

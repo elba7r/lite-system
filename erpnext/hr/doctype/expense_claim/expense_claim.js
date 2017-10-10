@@ -87,12 +87,12 @@ cur_frm.cscript.refresh = function(doc,cdt,cdn){
 
 		if (doc.docstatus===1 && doc.approval_status=="Approved") {
 			if (cint(doc.total_amount_reimbursed) < cint(doc.total_sanctioned_amount) && frappe.model.can_create("Journal Entry")) {
-				cur_frm.add_custom_button(__("Bank Entry"), cur_frm.cscript.make_bank_entry, __("Make"));
+				cur_frm.add_custom_button(__("Entry"), cur_frm.cscript.make_bank_entry, __("Make"));
 				cur_frm.page.set_inner_btn_group_as_primary(__("Make"));
 			}
 
 			if (cint(doc.total_amount_reimbursed) > 0 && frappe.model.can_read("Journal Entry")) {
-				cur_frm.add_custom_button(__('Bank Entries'), function() {
+				cur_frm.add_custom_button(__('Entries'), function() {
 					frappe.route_options = {
 						"Journal Entry Account.reference_type": me.frm.doc.doctype,
 						"Journal Entry Account.reference_name": me.frm.doc.name,

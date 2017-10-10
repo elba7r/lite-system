@@ -79,10 +79,10 @@ def make_bank_entry(docname):
 	from erpnext.accounts.doctype.journal_entry.journal_entry import get_default_bank_cash_account
 
 	expense_claim = frappe.get_doc("Expense Claim", docname)
-	default_bank_cash_account = get_default_bank_cash_account(expense_claim.company, "Bank")
+	default_bank_cash_account = get_default_bank_cash_account(expense_claim.company, "Cash")
 
 	je = frappe.new_doc("Journal Entry")
-	je.voucher_type = 'Bank Entry'
+	je.voucher_type = 'Cash Entry'
 	je.company = expense_claim.company
 	je.remark = 'Payment against Expense Claim: ' + docname;
 
