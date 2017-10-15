@@ -74,18 +74,18 @@ erpnext.accounts.SalesInvoiceController = erpnext.selling.SellingController.exte
 				cur_frm.add_custom_button(__('Payment'), this.make_payment_entry, __("Make"));
 			}
 
-			if(doc.outstanding_amount>0 && !cint(doc.is_return)) {
-				cur_frm.add_custom_button(__('Payment Request'), this.make_payment_request, __("Make"));
-			}
+		//	if(doc.outstanding_amount>0 && !cint(doc.is_return)) {
+		//		cur_frm.add_custom_button(__('Payment Request'), this.make_payment_request, __("Make"));
+		//	}
 
 
 		}
 
 		// Show buttons only when pos view is active
-		if (cint(doc.docstatus==0) && cur_frm.page.current_view_name!=="pos" && !doc.is_return) {
-			cur_frm.cscript.sales_order_btn();
-			cur_frm.cscript.delivery_note_btn();
-		}
+	//	if (cint(doc.docstatus==0) && cur_frm.page.current_view_name!=="pos" && !doc.is_return) {
+	//		cur_frm.cscript.sales_order_btn();
+	//		cur_frm.cscript.delivery_note_btn();
+	//	}
 
 		this.set_default_print_format();
 	},
@@ -105,42 +105,42 @@ erpnext.accounts.SalesInvoiceController = erpnext.selling.SellingController.exte
 		}
 	},
 
-	sales_order_btn: function() {
-		this.$sales_order_btn = cur_frm.add_custom_button(__('Sales Order'),
-			function() {
-				erpnext.utils.map_current_doc({
-					method: "erpnext.selling.doctype.sales_order.sales_order.make_sales_invoice",
-					source_doctype: "Sales Order",
-					get_query_filters: {
-						docstatus: 1,
-						status: ["!=", "Closed"],
-						per_billed: ["<", 99.99],
-						customer: cur_frm.doc.customer || undefined,
-						company: cur_frm.doc.company
-					}
-				})
-			}, __("Get items from"));
-	},
+//	sales_order_btn: function() {
+//		this.$sales_order_btn = cur_frm.add_custom_button(__('Sales Order'),
+//			function() {
+//				erpnext.utils.map_current_doc({
+//					method: "erpnext.selling.doctype.sales_order.sales_order.make_sales_invoice",
+//					source_doctype: "Sales Order",
+//					get_query_filters: {
+//						docstatus: 1,
+//						status: ["!=", "Closed"],
+//						per_billed: ["<", 99.99],
+//						customer: cur_frm.doc.customer || undefined,
+//						company: cur_frm.doc.company
+//					}
+//				})
+//			}, __("Get items from"));
+//},
 
-	delivery_note_btn: function() {
-		this.$delivery_note_btn = cur_frm.add_custom_button(__('Delivery Note'),
-			function() {
-				erpnext.utils.map_current_doc({
-					method: "erpnext.stock.doctype.delivery_note.delivery_note.make_sales_invoice",
-					source_doctype: "Delivery Note",
-					get_query: function() {
-						var filters = {
-							company: cur_frm.doc.company
-						};
-						if(cur_frm.doc.customer) filters["customer"] = cur_frm.doc.customer;
-						return {
-							query: "erpnext.controllers.queries.get_delivery_notes_to_be_billed",
-							filters: filters
-						};
-					}
-				});
-			}, __("Get items from"));
-	},
+//	delivery_note_btn: function() {
+//		this.$delivery_note_btn = cur_frm.add_custom_button(__('Delivery Note'),
+//			function() {
+//				erpnext.utils.map_current_doc({
+//					method: "erpnext.stock.doctype.delivery_note.delivery_note.make_sales_invoice",
+//					source_doctype: "Delivery Note",
+//					get_query: function() {
+//						var filters = {
+//							company: cur_frm.doc.company
+//						};
+//						if(cur_frm.doc.customer) filters["customer"] = cur_frm.doc.customer;
+//						return {
+//							query: "erpnext.controllers.queries.get_delivery_notes_to_be_billed",
+//							filters: filters
+//						};
+//					}
+//				});
+//			}, __("Get items from"));
+//	},
 
 	tc_name: function() {
 		this.get_terms();
@@ -429,9 +429,9 @@ cur_frm.cscript.on_submit = function(doc, cdt, cdn) {
 			__('Print'), __('New')
 		]));
 
-	} else if(cint(frappe.boot.notification_settings.sales_invoice)) {
-		cur_frm.email_doc(frappe.boot.notification_settings.sales_invoice_message);
-	}
+	}// else if(cint(frappe.boot.notification_settings.sales_invoice)) {
+	//	cur_frm.email_doc(frappe.boot.notification_settings.sales_invoice_message);
+//	}
 }
 
 cur_frm.set_query("debit_to", function(doc) {
@@ -472,7 +472,7 @@ frappe.ui.form.on('Sales Invoice', {
 		frm.custom_make_buttons = {
 			'Delivery Note': 'Delivery',
 			'Sales Invoice': 'Sales Return',
-			'Payment Request': 'Payment Request',
+			//'Payment Request': 'Payment Request',
 			'Payment': 'Payment Entry'
 		},
 		frm.fields_dict["timesheets"].grid.get_field("time_sheet").get_query = function(doc, cdt, cdn){
