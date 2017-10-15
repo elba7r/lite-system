@@ -4184,11 +4184,7 @@
  "istable": 0, 
  "max_attachments": 0, 
  "menu_index": 0, 
-<<<<<<< HEAD
  "modified": "2017-10-15 15:36:42.704164", 
-=======
- "modified": "2017-10-03 16:23:18.852664", 
->>>>>>> 64fe1b294015f7e880ab662d8fc268690d3640ee
  "modified_by": "Administrator", 
  "module": "Accounts", 
  "name": "Sales Invoice", 
