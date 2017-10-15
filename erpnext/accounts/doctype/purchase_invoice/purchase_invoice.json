@@ -959,7 +959,7 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
-   "default": "0", 
+   "default": "1", 
    "fieldname": "update_stock", 
    "fieldtype": "Check", 
    "hidden": 0, 
@@ -1570,7 +1570,7 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
-   "default": "Grand Total", 
+   "default": "Net Total", 
    "fieldname": "apply_discount_on", 
    "fieldtype": "Select", 
    "hidden": 0, 
@@ -3410,7 +3410,11 @@
  "istable": 0, 
  "max_attachments": 0, 
  "menu_index": 0, 
+<<<<<<< HEAD
+ "modified": "2017-10-15 16:05:43.754659", 
+=======
  "modified": "2017-09-24 23:32:51.038016", 
+>>>>>>> 64fe1b294015f7e880ab662d8fc268690d3640ee
  "modified_by": "Administrator", 
  "module": "Accounts", 
  "name": "Purchase Invoice", 

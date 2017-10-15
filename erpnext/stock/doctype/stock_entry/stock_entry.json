@@ -634,6 +634,7 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+   "default": "\u0645\u062d\u0644\u0627\u062a - RL", 
    "fieldname": "from_warehouse", 
    "fieldtype": "Link", 
    "hidden": 0, 
@@ -690,6 +691,7 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+   "default": "\u0645\u062d\u0644\u0627\u062a - RL", 
    "fieldname": "to_warehouse", 
    "fieldtype": "Link", 
    "hidden": 0, 
@@ -1568,7 +1570,11 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
+<<<<<<< HEAD
+ "modified": "2017-10-11 17:59:55.454182", 
+=======
  "modified": "2017-09-18 23:16:52.091606", 
+>>>>>>> 64fe1b294015f7e880ab662d8fc268690d3640ee
  "modified_by": "Administrator", 
  "module": "Stock", 
  "name": "Stock Entry", 
