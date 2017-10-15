@@ -1199,11 +1199,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
-<<<<<<< HEAD
  "modified": "2017-10-15 16:45:18.601538", 
-=======
- "modified": "2017-09-18 23:01:40.919513", 
->>>>>>> 64fe1b294015f7e880ab662d8fc268690d3640ee
  "modified_by": "Administrator", 
  "module": "Accounts", 
  "name": "Pricing Rule", 

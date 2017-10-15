@@ -2713,11 +2713,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 1, 
-<<<<<<< HEAD
  "modified": "2017-10-11 17:01:38.480137", 
-=======
- "modified": "2017-10-09 20:51:46.732568", 
->>>>>>> 64fe1b294015f7e880ab662d8fc268690d3640ee
  "modified_by": "Administrator", 
  "module": "Stock", 
  "name": "Item", 
